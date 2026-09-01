@@ -11,3 +11,6 @@ imgC/*
 !imgC/multi_granular_retrieval.png
 !imgC/retrieval_strategies.png
 !imgC/task-comparison.png
+!images/
+images/*
+!images/Table12_Integration_Paradigms.png

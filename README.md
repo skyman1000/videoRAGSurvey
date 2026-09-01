@@ -39,6 +39,7 @@ The survey studies Video RAG as a three-stage pipeline:
   - [Knowledge Structure](#knowledge-structure)
   - [Retrieval Mechanism](#retrieval-mechanism)
   - [Multimodal Fusion](#multimodal-fusion)
+  - [Integration Paradigms of Video RAG Systems](#integration-paradigms-of-video-rag-systems)
 - [Workflow](#workflow)
 - [Paper Collection](#paper-collection)
 - [Benchmarks and Datasets](#benchmarks-and-datasets)
@@ -153,6 +154,16 @@ The taxonomy has five design dimensions: evidence granularity, knowledge structu
 
 <p align="center">
   <img src="imgC/multimodal-content-extraction-alignment.png" width="96%" alt="Multimodal content extraction and temporal alignment in Video RAG" />
+</p>
+
+<p align="right"><a href="#quick-index">↑ Back to Index</a></p>
+
+### Integration Paradigms of Video RAG Systems
+
+Retrieval-generation integration describes how retrieved video evidence is connected to the generator and optimized during inference. Existing Video RAG methods can be organized into two primary paradigms: training-enhanced integration and training-free integration.
+
+<p align="center">
+  <img src="images/Table12_Integration_Paradigms.png" width="98%" alt="Table 12. Integration Paradigms of Video RAG Systems" />
 </p>
 
 <p align="right"><a href="#quick-index">↑ Back to Index</a></p>
