@@ -1,7 +1,7 @@
 <h1 align="center">Awesome Video RAG</h1>
 
 <p align="center">
-  <strong>A curated companion to <em>A Comprehensive Survey on Video Retrieval-Augmented Generation</em></strong>
+  <strong>Paper list and project page for <em>A Comprehensive Survey on Video Retrieval-Augmented Generation</em></strong>
 </p>
 
 <p align="center">
@@ -11,21 +11,21 @@
   <img src="https://img.shields.io/badge/PRs-welcome-brightgreen" alt="PRs welcome" />
 </p>
 
-This repository accompanies our survey paper:
+This repository accompanies the survey:
 
 > **A Comprehensive Survey on Video Retrieval-Augmented Generation**  
 > Working manuscript. The public paper link and final bibliographic metadata will be added after release.
 
-Video Retrieval-Augmented Generation (Video RAG) turns long videos or video corpora into searchable multimodal knowledge, retrieves query-relevant evidence, and conditions a language or multimodal generator on that evidence. The retrieved evidence can include frames, clips, scenes, entire videos, ASR transcripts, OCR text, audio events, timestamps, entities, relations, and structured memories.
+Video Retrieval-Augmented Generation (Video RAG) builds searchable multimodal knowledge from videos, retrieves evidence for a query, and uses that evidence to generate an answer. Evidence may be visual, textual, acoustic, temporal, or structured.
 
-Our survey provides a unified system view of Video RAG across three core modules:
+The survey studies Video RAG as a three-stage pipeline:
 
 - **Video knowledge indexing and representation**: corpus construction, multimodal extraction, temporal alignment, knowledge-base construction, and hybrid indexing.
 - **Retrieval strategies and mechanisms**: query processing, multi-granular retrieval, single-step/multi-step/adaptive retrieval, and post-retrieval filtering.
 - **Retrieval augmentation and generation**: multimodal evidence fusion, generator integration, training strategies, and grounded response generation.
 
 > [!NOTE]
-> Paper and code links below were checked against primary paper pages, official proceedings, project pages, or author-identified repositories. A dash (—) means that we did not verify an official public implementation. Dates and venues follow the latest public records available in August 2026.
+> Venue labels use the final publication year. A dash (—) means no author-identified public implementation was found. Links last checked: 1 September 2026.
 
 ---
 
@@ -52,7 +52,7 @@ Our survey provides a unified system view of Video RAG across three core modules
 
 ## What Counts as Video RAG?
 
-We use a system-level definition:
+In this survey, a system is counted as Video RAG when:
 
 1. Video content is transformed into a **retrievable knowledge base** $\mathcal{K}$.
 2. A retriever $\mathcal{R}$ selects query-relevant evidence $\mathcal{E}$ from $\mathcal{K}$.
@@ -66,7 +66,7 @@ $$
   <img src="imgC/videorag-framework.png" width="96%" alt="Overall framework of Video RAG" />
 </p>
 
-This criterion separates Video RAG from adjacent tasks:
+Scope boundary:
 
 | Task | Retrieval output | Final output | Video RAG? |
 |---|---|---|---|
@@ -86,13 +86,13 @@ This criterion separates Video RAG from adjacent tasks:
 
 ## Evolution
 
-Video RAG has evolved from retrieving external background knowledge for captioning, through internal video memories and query-aware frame/segment selection, toward hybrid knowledge bases, graph reasoning, adaptive routing, multi-agent retrieval, and streaming systems.
+The field starts with external knowledge retrieval for captioning, then moves to video-internal memory, query-aware frame and clip selection, graph indexes, adaptive routing, and streaming retrieval.
 
 <p align="center">
   <img src="imgC/Evolution.png" width="98%" alt="Evolution of Video RAG from 2018 to 2026" />
 </p>
 
-The timeline uses three non-exclusive labels:
+The timeline uses three labels; a paper may have more than one:
 
 - 🔎 **Optimized retrieval strategy**: query guidance, granularity design, multi-hop search, tool use, reranking, or adaptive routing.
 - 🟢 **Internal knowledge base**: indices, memories, stores, or graphs built from the current video or task process.
@@ -104,7 +104,7 @@ The timeline uses three non-exclusive labels:
 
 ## Taxonomy
 
-We organize Video RAG around five core design dimensions: evidence granularity, knowledge structure, retrieval strategy, multimodal alignment, and generator model. These choices jointly determine the trade-offs among evidence coverage, context budget, retrieval accuracy, latency, and answer quality.
+The taxonomy has five design dimensions: evidence granularity, knowledge structure, retrieval strategy, multimodal alignment, and generator model.
 
 <p align="center">
   <img src="imgC/videorag_design_framework.png" width="98%" alt="Core design dimensions of Video RAG" />
@@ -114,11 +114,11 @@ We organize Video RAG around five core design dimensions: evidence granularity, 
 
 | Granularity | Retrieved evidence | Strength | Typical limitation | Representative systems |
 |---|---|---|---|---|
-| **Frame** | Frames or frame-aligned ASR/OCR/object evidence | Precise visual and temporal localization | Limited event context | [Video-RAG](https://arxiv.org/abs/2411.13093), [DrVideo](https://arxiv.org/abs/2406.12846), [FRAG](https://arxiv.org/abs/2504.17447), [E-VRAG](https://arxiv.org/abs/2508.01546), [RAVU](https://arxiv.org/abs/2505.03173) |
-| **Segment / clip** | Bounded temporal windows with aligned multimodal evidence | Preserves local motion, dialogue, and event context | Sensitive to segmentation boundaries | [Goldfish](https://arxiv.org/abs/2407.12679), [SALOVA](https://arxiv.org/abs/2411.16173), [Vgent](https://arxiv.org/abs/2510.14032), [VideoStir](https://arxiv.org/abs/2604.05418) |
+| **Frame** | Frames or frame-aligned ASR/OCR/object evidence | Precise visual and temporal localization | Limited event context | [Video-RAG](https://papers.nips.cc/paper_files/paper/2025/hash/f593c9c251d4d7cf14d4ab9861dfb7eb-Abstract-Conference.html), [DrVideo](https://openaccess.thecvf.com/content/CVPR2025/html/Ma_DrVideo_Document_Retrieval_Based_Long_Video_Understanding_CVPR_2025_paper.html), [FRAG](https://arxiv.org/abs/2504.17447), [E-VRAG](https://arxiv.org/abs/2508.01546), [RAVU](https://openaccess.thecvf.com/content/WACV2026/html/Malik_RAVU_Retrieval_Augmented_Video_Understanding_with_Compositional_Reasoning_over_Graph_WACV_2026_paper.html) |
+| **Segment / clip** | Bounded temporal windows with aligned multimodal evidence | Preserves local motion, dialogue, and event context | Sensitive to segmentation boundaries | [Goldfish](https://www.ecva.net/papers/eccv_2024/papers_ECCV/html/4213_ECCV_2024_paper.php), [SALOVA](https://openaccess.thecvf.com/content/CVPR2025/html/Kim_SALOVA_Segment-Augmented_Long_Video_Assistant_for_Targeted_Retrieval_and_Routing_CVPR_2025_paper.html), [Vgent](https://proceedings.neurips.cc/paper_files/paper/2025/hash/91b75715a2ae8f2542b78be31941eac3-Abstract-Conference.html), [VideoStir](https://aclanthology.org/2026.acl-long.1656/) |
 | **Scene** | Semantically or narratively coherent scenes | Cross-shot continuity and event-level context | Scene-boundary and graph-construction errors | [SceneRAG](https://arxiv.org/abs/2506.07600) |
-| **Video** | Complete videos or global video representations | Corpus-scale selection and global context | Coarse localization and high downstream context cost | [VideoRAG over Video Corpus](https://aclanthology.org/2025.findings-acl.1096/), [VideoRAG with Extreme Long-Context Videos](https://arxiv.org/abs/2502.01549) |
-| **Hierarchical / multi-granular** | Evidence across several temporal or semantic levels | Balances global context and fine-grained access | More complex indexing and routing | [VideoTree](https://arxiv.org/abs/2405.19209), [AdaVideoRAG](https://proceedings.neurips.cc/paper_files/paper/2025/file/092359ce5cf60a80e882378944bf1be4-Paper-Conference.pdf), [WorldMM](https://arxiv.org/abs/2512.02425), [CARVE](https://arxiv.org/abs/2606.13141) |
+| **Video** | Complete videos or global video representations | Corpus-scale selection and global context | Coarse localization and high downstream context cost | [VideoRAG over Video Corpus](https://aclanthology.org/2025.findings-acl.1096/), [VideoRAG with Extreme Long-Context Videos](https://doi.org/10.1145/3770854.3783944) |
+| **Hierarchical / multi-granular** | Evidence across several temporal or semantic levels | Balances global context and fine-grained access | More complex indexing and routing | [VideoTree](https://openaccess.thecvf.com/content/CVPR2025/html/Wang_VideoTree_Adaptive_Tree-based_Video_Representation_for_LLM_Reasoning_on_Long_CVPR_2025_paper.html), [AdaVideoRAG](https://proceedings.neurips.cc/paper_files/paper/2025/hash/092359ce5cf60a80e882378944bf1be4-Abstract-Conference.html), [WorldMM](https://openaccess.thecvf.com/content/CVPR2026/html/Yeo_WorldMM_Dynamic_Multimodal_Memory_Agent_for_Long_Video_Reasoning_CVPR_2026_paper.html), [CARVE](https://arxiv.org/abs/2606.13141) |
 
 <p align="center">
   <img src="imgC/multi_granular_retrieval.png" width="96%" alt="Frame, segment, scene, and video-level retrieval" />
@@ -128,17 +128,17 @@ We organize Video RAG around five core design dimensions: evidence granularity, 
 
 | Structure | Evidence organization | Best suited to | Representative systems |
 |---|---|---|---|
-| **Vector** | Frame/clip embeddings and textual proxies retrieved by similarity search or reranking | Fast semantic matching and scalable local evidence access | [iRAG](https://arxiv.org/abs/2404.12309), [Video-RAG](https://arxiv.org/abs/2411.13093), [DrVideo](https://arxiv.org/abs/2406.12846), [SALOVA](https://arxiv.org/abs/2411.16173), [TV-RAG](https://doi.org/10.1145/3746027.3755873) |
-| **Graph** | Entities, events, scenes, or clips connected by temporal, semantic, spatial, causal, or co-occurrence edges | Multi-hop, relational, and event-chain reasoning | [Vgent](https://arxiv.org/abs/2510.14032), [ViG-RAG](https://doi.org/10.1609/aaai.v40i1.36963), [RAVU](https://arxiv.org/abs/2505.03173), [VideoStir](https://arxiv.org/abs/2604.05418) |
-| **Hybrid / memory** | Two or more of vectors, graphs, hierarchical event structures, and persistent memories | Long-horizon reasoning over heterogeneous evidence | [AdaVideoRAG](https://proceedings.neurips.cc/paper_files/paper/2025/file/092359ce5cf60a80e882378944bf1be4-Paper-Conference.pdf), [MemVid](https://arxiv.org/abs/2503.09149), [VideoRAG with Extreme Long-Context Videos](https://arxiv.org/abs/2502.01549), [WorldMM](https://arxiv.org/abs/2512.02425), [StreamRAG](https://openaccess.thecvf.com/content/CVPR2026/html/Xie_StreamRAG_Enhancing_Real-Time_Video_Understanding_with_Retrieval_Augmentation_CVPR_2026_paper.html) |
+| **Vector** | Frame/clip embeddings and textual proxies retrieved by similarity search or reranking | Fast semantic matching and scalable local evidence access | [iRAG](https://doi.org/10.1145/3627673.3680088), [Video-RAG](https://papers.nips.cc/paper_files/paper/2025/hash/f593c9c251d4d7cf14d4ab9861dfb7eb-Abstract-Conference.html), [DrVideo](https://openaccess.thecvf.com/content/CVPR2025/html/Ma_DrVideo_Document_Retrieval_Based_Long_Video_Understanding_CVPR_2025_paper.html), [SALOVA](https://openaccess.thecvf.com/content/CVPR2025/html/Kim_SALOVA_Segment-Augmented_Long_Video_Assistant_for_Targeted_Retrieval_and_Routing_CVPR_2025_paper.html), [TV-RAG](https://doi.org/10.1145/3746027.3755873) |
+| **Graph** | Entities, events, scenes, or clips connected by temporal, semantic, spatial, causal, or co-occurrence edges | Multi-hop, relational, and event-chain reasoning | [Vgent](https://proceedings.neurips.cc/paper_files/paper/2025/hash/91b75715a2ae8f2542b78be31941eac3-Abstract-Conference.html), [ViG-RAG](https://doi.org/10.1609/aaai.v40i1.36963), [RAVU](https://openaccess.thecvf.com/content/WACV2026/html/Malik_RAVU_Retrieval_Augmented_Video_Understanding_with_Compositional_Reasoning_over_Graph_WACV_2026_paper.html), [VideoStir](https://aclanthology.org/2026.acl-long.1656/) |
+| **Hybrid / memory** | Two or more of vectors, graphs, hierarchical event structures, and persistent memories | Long-horizon reasoning over heterogeneous evidence | [AdaVideoRAG](https://proceedings.neurips.cc/paper_files/paper/2025/hash/092359ce5cf60a80e882378944bf1be4-Abstract-Conference.html), [MemVid](https://arxiv.org/abs/2503.09149), [VideoRAG with Extreme Long-Context Videos](https://doi.org/10.1145/3770854.3783944), [WorldMM](https://openaccess.thecvf.com/content/CVPR2026/html/Yeo_WorldMM_Dynamic_Multimodal_Memory_Agent_for_Long_Video_Reasoning_CVPR_2026_paper.html), [StreamRAG](https://openaccess.thecvf.com/content/CVPR2026/html/Xie_StreamRAG_Enhancing_Real-Time_Video_Understanding_with_Retrieval_Augmentation_CVPR_2026_paper.html) |
 
 ### Retrieval Mechanism
 
 | Mechanism | Definition | Typical use | Representative systems |
 |---|---|---|---|
-| **Single-step** | A fixed, non-iterative retrieval-and-ranking pass | Low-latency factual or local-evidence queries | [Goldfish](https://arxiv.org/abs/2407.12679), [Video-RAG](https://arxiv.org/abs/2411.13093), [FRAG](https://arxiv.org/abs/2504.17447), [TV-RAG](https://doi.org/10.1145/3746027.3755873) |
-| **Multi-step** | Evidence is refined, expanded, or composed over multiple retrieval stages | Long-range, multi-event, or compositional reasoning | [DrVideo](https://arxiv.org/abs/2406.12846), [MemVid](https://arxiv.org/abs/2503.09149), [Vgent](https://arxiv.org/abs/2510.14032), [RAVU](https://arxiv.org/abs/2505.03173), [VideoStir](https://arxiv.org/abs/2604.05418) |
-| **Adaptive** | The system selects the retrieval scheme, modality, granularity, search depth, or stopping condition per query/evidence state | Accuracy-efficiency control across diverse queries | [VideoTree](https://arxiv.org/abs/2405.19209), [AdaVideoRAG](https://proceedings.neurips.cc/paper_files/paper/2025/file/092359ce5cf60a80e882378944bf1be4-Paper-Conference.pdf), [WorldMM](https://arxiv.org/abs/2512.02425), [CARVE](https://arxiv.org/abs/2606.13141), [StreamRAG](https://openaccess.thecvf.com/content/CVPR2026/html/Xie_StreamRAG_Enhancing_Real-Time_Video_Understanding_with_Retrieval_Augmentation_CVPR_2026_paper.html) |
+| **Single-step** | A fixed, non-iterative retrieval-and-ranking pass | Low-latency factual or local-evidence queries | [Goldfish](https://www.ecva.net/papers/eccv_2024/papers_ECCV/html/4213_ECCV_2024_paper.php), [Video-RAG](https://papers.nips.cc/paper_files/paper/2025/hash/f593c9c251d4d7cf14d4ab9861dfb7eb-Abstract-Conference.html), [FRAG](https://arxiv.org/abs/2504.17447), [TV-RAG](https://doi.org/10.1145/3746027.3755873) |
+| **Multi-step** | Evidence is refined, expanded, or composed over multiple retrieval stages | Long-range, multi-event, or compositional reasoning | [DrVideo](https://openaccess.thecvf.com/content/CVPR2025/html/Ma_DrVideo_Document_Retrieval_Based_Long_Video_Understanding_CVPR_2025_paper.html), [MemVid](https://arxiv.org/abs/2503.09149), [Vgent](https://proceedings.neurips.cc/paper_files/paper/2025/hash/91b75715a2ae8f2542b78be31941eac3-Abstract-Conference.html), [RAVU](https://openaccess.thecvf.com/content/WACV2026/html/Malik_RAVU_Retrieval_Augmented_Video_Understanding_with_Compositional_Reasoning_over_Graph_WACV_2026_paper.html), [VideoStir](https://aclanthology.org/2026.acl-long.1656/) |
+| **Adaptive** | The system selects the retrieval scheme, modality, granularity, search depth, or stopping condition per query/evidence state | Accuracy-efficiency control across diverse queries | [VideoTree](https://openaccess.thecvf.com/content/CVPR2025/html/Wang_VideoTree_Adaptive_Tree-based_Video_Representation_for_LLM_Reasoning_on_Long_CVPR_2025_paper.html), [AdaVideoRAG](https://proceedings.neurips.cc/paper_files/paper/2025/hash/092359ce5cf60a80e882378944bf1be4-Abstract-Conference.html), [WorldMM](https://openaccess.thecvf.com/content/CVPR2026/html/Yeo_WorldMM_Dynamic_Multimodal_Memory_Agent_for_Long_Video_Reasoning_CVPR_2026_paper.html), [CARVE](https://arxiv.org/abs/2606.13141), [StreamRAG](https://openaccess.thecvf.com/content/CVPR2026/html/Xie_StreamRAG_Enhancing_Real-Time_Video_Understanding_with_Retrieval_Augmentation_CVPR_2026_paper.html) |
 
 <p align="center">
   <img src="imgC/retrieval_strategies.png" width="98%" alt="Single-step, multi-step, and adaptive retrieval" />
@@ -148,9 +148,9 @@ We organize Video RAG around five core design dimensions: evidence granularity, 
 
 | Fusion stage | Common operations | Representative systems |
 |---|---|---|
-| **Early fusion** | Textual evidence injection, prompt augmentation, cross-modal token concatenation, unified textual representations | [R2A](https://arxiv.org/abs/2306.11732), [ChatVideo](https://arxiv.org/abs/2304.14407), [Goldfish](https://arxiv.org/abs/2407.12679), [Video-RAG](https://arxiv.org/abs/2411.13093), [VideoRAG over Video Corpus](https://aclanthology.org/2025.findings-acl.1096/) |
-| **Mid fusion** | Cross-modal attention, query-conditioned selection, learned retrieval, memory augmentation, spatio-temporal alignment | [MA-LMM](https://arxiv.org/abs/2404.05726), [SALOVA](https://arxiv.org/abs/2411.16173), [DrVideo](https://arxiv.org/abs/2406.12846), [MemVid](https://arxiv.org/abs/2503.09149), [VideoStir](https://arxiv.org/abs/2604.05418) |
-| **Late fusion** | Multi-source consolidation, cascaded filtering, reranking/verification, agentic reasoning, graph reasoning | [iRAG](https://arxiv.org/abs/2404.12309), [VideoAgent](https://arxiv.org/abs/2403.11481), [Vgent](https://arxiv.org/abs/2510.14032), [ViG-RAG](https://doi.org/10.1609/aaai.v40i1.36963), [RAVU](https://arxiv.org/abs/2505.03173), [WorldMM](https://arxiv.org/abs/2512.02425) |
+| **Early fusion** | Textual evidence injection, prompt augmentation, cross-modal token concatenation, unified textual representations | [R2A](https://openaccess.thecvf.com/content/ICCV2023W/MMFM/html/Pan_Retrieving-to-Answer_Zero-Shot_Video_Question_Answering_with_Frozen_Large_Language_Models_ICCVW_2023_paper.html), [ChatVideo](https://arxiv.org/abs/2304.14407), [Goldfish](https://www.ecva.net/papers/eccv_2024/papers_ECCV/html/4213_ECCV_2024_paper.php), [Video-RAG](https://papers.nips.cc/paper_files/paper/2025/hash/f593c9c251d4d7cf14d4ab9861dfb7eb-Abstract-Conference.html), [VideoRAG over Video Corpus](https://aclanthology.org/2025.findings-acl.1096/) |
+| **Mid fusion** | Cross-modal attention, query-conditioned selection, learned retrieval, memory augmentation, spatio-temporal alignment | [MA-LMM](https://openaccess.thecvf.com/content/CVPR2024/html/He_MA-LMM_Memory-Augmented_Large_Multimodal_Model_for_Long-Term_Video_Understanding_CVPR_2024_paper.html), [SALOVA](https://openaccess.thecvf.com/content/CVPR2025/html/Kim_SALOVA_Segment-Augmented_Long_Video_Assistant_for_Targeted_Retrieval_and_Routing_CVPR_2025_paper.html), [DrVideo](https://openaccess.thecvf.com/content/CVPR2025/html/Ma_DrVideo_Document_Retrieval_Based_Long_Video_Understanding_CVPR_2025_paper.html), [MemVid](https://arxiv.org/abs/2503.09149), [VideoStir](https://aclanthology.org/2026.acl-long.1656/) |
+| **Late fusion** | Multi-source consolidation, cascaded filtering, reranking/verification, agentic reasoning, graph reasoning | [iRAG](https://doi.org/10.1145/3627673.3680088), [VideoAgent](https://www.ecva.net/papers/eccv_2024/papers_ECCV/html/3241_ECCV_2024_paper.php), [Vgent](https://proceedings.neurips.cc/paper_files/paper/2025/hash/91b75715a2ae8f2542b78be31941eac3-Abstract-Conference.html), [ViG-RAG](https://doi.org/10.1609/aaai.v40i1.36963), [RAVU](https://openaccess.thecvf.com/content/WACV2026/html/Malik_RAVU_Retrieval_Augmented_Video_Understanding_with_Compositional_Reasoning_over_Graph_WACV_2026_paper.html), [WorldMM](https://openaccess.thecvf.com/content/CVPR2026/html/Yeo_WorldMM_Dynamic_Multimodal_Memory_Agent_for_Long_Video_Reasoning_CVPR_2026_paper.html) |
 
 <p align="center">
   <img src="imgC/multimodal-content-extraction-alignment.png" width="96%" alt="Multimodal content extraction and temporal alignment in Video RAG" />
@@ -162,13 +162,13 @@ We organize Video RAG around five core design dimensions: evidence granularity, 
 
 ## Workflow
 
-A practical Video RAG pipeline contains ten principal modules grouped into three stages.
+The manuscript groups ten modules into three stages.
 
-| Stage | Modules | Key design questions |
+| Stage | Modules | Main decision |
 |---|---|---|
-| **1. Video knowledge indexing and representation** | Corpus construction; multimodal content extraction; knowledge-base construction; hybrid indexing | What should be extracted? At what temporal granularity? How are visual, audio, ASR, OCR, metadata, entities, and timestamps aligned and stored? |
-| **2. Retrieval strategies and mechanisms** | Query processing; retrieval granularity; retrieval mechanism; post-processing | Should the system retrieve frames, clips, scenes, videos, text, or graph paths? Is one pass sufficient? When should it rerank, expand, or stop? |
-| **3. Retrieval augmentation and generation** | Multimodal fusion; generator integration | How should evidence be formatted, fused, verified, and passed to an LLM, VLLM, or MLLM? Which components are trained or frozen? |
+| **1. Video knowledge indexing and representation** | Corpus construction; multimodal content extraction; knowledge-base construction; hybrid indexing | What to extract, align, and store, and at which temporal scale |
+| **2. Retrieval strategies and mechanisms** | Query processing; retrieval granularity; retrieval mechanism; post-processing | Which evidence to retrieve, how many passes to use, and when to stop |
+| **3. Retrieval augmentation and generation** | Multimodal fusion; generator integration | How to format, fuse, verify, and pass evidence to the generator |
 
 ### Indexing and Representation
 
@@ -202,35 +202,35 @@ A practical Video RAG pipeline contains ten principal modules grouped into three
 | Venue | Paper | Main Video-RAG contribution | Code |
 |---|---|---|---|
 | EMNLP 2018 | [Incorporating Background Knowledge into Video Description Generation](https://aclanthology.org/D18-1433/) | Retrieves external news documents and injects entities/events into video descriptions | — |
-| ACM TOMM 2023 | [Retrieval Augmented Convolutional Encoder-Decoder Networks for Video Captioning](https://doi.org/10.1145/3539225) | Retrieval-augmented memory for video caption generation | — |
-| ICCV Workshops 2023 | [Retrieving-to-Answer: Zero-Shot Video Question Answering with Frozen Large Language Models](https://arxiv.org/abs/2306.11732) | Retrieves semantically similar text from a generic corpus for zero-shot Video QA | — |
+| ACM TOMM 2023 | [Retrieval Augmented Convolutional Encoder-decoder Networks for Video Captioning](https://doi.org/10.1145/3539225) | Retrieval-augmented memory for video caption generation | — |
+| ICCV Workshops 2023 | [Retrieving-to-Answer: Zero-Shot Video Question Answering with Frozen Large Language Models](https://openaccess.thecvf.com/content/ICCV2023W/MMFM/html/Pan_Retrieving-to-Answer_Zero-Shot_Video_Question_Answering_with_Frozen_Large_Language_Models_ICCVW_2023_paper.html) | Retrieves semantically similar text from a generic corpus for zero-shot Video QA | — |
 | arXiv 2023 | [ChatVideo: A Tracklet-Centric Multimodal and Versatile Video Understanding System](https://arxiv.org/abs/2304.14407) | Tracklet-centric multimodal database and tool-mediated video interaction | [Code](https://github.com/yiwengxie/Chat-Video) |
-| NeurIPS 2023 | [Self-Chained Image-Language Model for Video Localization and Question Answering (SeViLA)](https://arxiv.org/abs/2305.06988) | Query-aware keyframe localization chained with answer generation | [Code](https://github.com/Yui010206/SeViLA) |
+| NeurIPS 2023 | [Self-Chained Image-Language Model for Video Localization and Question Answering (SeViLA)](https://proceedings.neurips.cc/paper_files/paper/2023/hash/f22a9af8dbb348952b08bd58d4734b50-Abstract-Conference.html) | Query-aware keyframe localization chained with answer generation | [Code](https://github.com/Yui010206/SeViLA) |
 
 ### 2024: Memories, Agents, and Efficient Video Access
 
 | Venue | Paper | Main Video-RAG contribution | Code |
 |---|---|---|---|
-| CVPR Workshops 2024 | [ViTA: An Efficient Video-to-Text Algorithm Using VLM for RAG-Based Video Analysis](https://openaccess.thecvf.com/content/CVPR2024W/MAR/html/Arefeen_ViTA_An_Efficient_Video-to-Text_Algorithm__using_VLM_for_RAG-based_CVPRW_2024_paper.html) | Accelerates video-to-text knowledge construction with lightweight/heavyweight VLM routing | — |
-| ECCV 2024 | [VideoAgent: A Memory-Augmented Multimodal Agent for Video Understanding](https://arxiv.org/abs/2403.11481) | Structured temporal/object memory with LLM-directed retrieval tools | [Code](https://github.com/YueFan1014/VideoAgent) |
-| CIKM 2024 | [iRAG: Advancing RAG for Videos with an Incremental Approach](https://arxiv.org/abs/2404.12309) | Defers expensive fine-grained processing until query time for faster ingestion | — |
-| CVPR 2024 | [MA-LMM: Memory-Augmented Large Multimodal Model for Long-Term Video Understanding](https://arxiv.org/abs/2404.05726) | Online visual memory bank for long-term video reasoning | [Code](https://github.com/boheumd/MA-LMM) |
-| CVPR 2024 | [Retrieval-Augmented Egocentric Video Captioning (EgoInstructor)](https://arxiv.org/abs/2401.00789) | Retrieves exocentric instructional videos to improve egocentric captioning | [Code](https://github.com/Jazzcharles/Egoinstructor) |
-| ECCV 2024 | [Goldfish: Vision-Language Understanding of Arbitrarily Long Videos](https://arxiv.org/abs/2407.12679) | Retrieves query-relevant clips through textual descriptions for arbitrarily long videos | [Code](https://github.com/Vision-CAIR/MiniGPT4-video) |
+| CVPR Workshops 2024 | [ViTA: An Efficient Video-to-Text Algorithm using VLM for RAG-based Video Analysis System](https://openaccess.thecvf.com/content/CVPR2024W/MAR/html/Arefeen_ViTA_An_Efficient_Video-to-Text_Algorithm__using_VLM_for_RAG-based_CVPRW_2024_paper.html) | Accelerates video-to-text knowledge construction with lightweight/heavyweight VLM routing | — |
+| ECCV 2024 | [VideoAgent: A Memory-augmented Multimodal Agent for Video Understanding](https://www.ecva.net/papers/eccv_2024/papers_ECCV/html/3241_ECCV_2024_paper.php) | Structured temporal/object memory with LLM-directed retrieval tools | [Code](https://github.com/YueFan1014/VideoAgent) |
+| CIKM 2024 | [iRAG: Advancing RAG for Videos with an Incremental Approach](https://doi.org/10.1145/3627673.3680088) | Defers expensive fine-grained processing until query time for faster ingestion | — |
+| CVPR 2024 | [MA-LMM: Memory-Augmented Large Multimodal Model for Long-Term Video Understanding](https://openaccess.thecvf.com/content/CVPR2024/html/He_MA-LMM_Memory-Augmented_Large_Multimodal_Model_for_Long-Term_Video_Understanding_CVPR_2024_paper.html) | Online visual memory bank for long-term video reasoning | [Code](https://github.com/boheumd/MA-LMM) |
+| CVPR 2024 | [Retrieval-Augmented Egocentric Video Captioning (EgoInstructor)](https://openaccess.thecvf.com/content/CVPR2024/html/Xu_Retrieval-Augmented_Egocentric_Video_Captioning_CVPR_2024_paper.html) | Retrieves exocentric instructional videos to improve egocentric captioning | [Code](https://github.com/Jazzcharles/Egoinstructor) |
+| ECCV 2024 | [Goldfish: Vision-Language Understanding of Arbitrarily Long Videos](https://www.ecva.net/papers/eccv_2024/papers_ECCV/html/4213_ECCV_2024_paper.php) | Retrieves query-relevant clips through textual descriptions for arbitrarily long videos | [Code](https://github.com/Vision-CAIR/MiniGPT4-video) |
 
 ### 2025: Dedicated Video RAG Systems
 
 | Venue | Paper | Main Video-RAG contribution | Code |
 |---|---|---|---|
-| NeurIPS 2025 | [Video-RAG: Visually-Aligned Retrieval-Augmented Long Video Comprehension](https://arxiv.org/abs/2411.13093) | Training-free retrieval of timestamp-aligned ASR, OCR, and object evidence | [Code](https://github.com/Leon1207/Video-RAG-master) |
+| NeurIPS 2025 | [Video-RAG: Visually-aligned Retrieval-Augmented Long Video Comprehension](https://papers.nips.cc/paper_files/paper/2025/hash/f593c9c251d4d7cf14d4ab9861dfb7eb-Abstract-Conference.html) | Training-free retrieval of timestamp-aligned ASR, OCR, and object evidence | [Code](https://github.com/Leon1207/Video-RAG-master) |
 | Findings of ACL 2025 | [VideoRAG: Retrieval-Augmented Generation over Video Corpus](https://aclanthology.org/2025.findings-acl.1096/) | Coarse-to-fine corpus-level video retrieval with adaptive frame/text selection | [Code](https://github.com/starsuzi/VideoRAG) |
-| CVPR 2025 | [DrVideo: Document Retrieval Based Long Video Understanding](https://arxiv.org/abs/2406.12846) | Iteratively augments a textual video document with retrieved keyframes | [Code](https://github.com/Upper9527/DrVideo) |
-| CVPR 2025 | [SALOVA: Segment-Augmented Long Video Assistant for Targeted Retrieval and Routing](https://arxiv.org/abs/2411.16173) | Segment Retrieval Router with spatio-temporal segment representations | [Code](https://github.com/IVY-LVLM/SALOVA) |
-| CVPR 2025 | [VideoTree: Adaptive Tree-Based Video Representation for LLM Reasoning on Long Videos](https://arxiv.org/abs/2405.19209) | Query-adaptive, coarse-to-fine hierarchical video representation | [Code](https://github.com/Ziyang412/VideoTree) |
-| NeurIPS 2025 | [AdaVideoRAG: Omni-Contextual Adaptive Retrieval-Augmented Efficient Long Video Understanding](https://proceedings.neurips.cc/paper_files/paper/2025/file/092359ce5cf60a80e882378944bf1be4-Paper-Conference.pdf) | Routes queries among direct inference, multimodal retrieval, and graph retrieval | [Repository; full release pending](https://github.com/xzc-zju/AdaVideoRAG) |
-| NeurIPS 2025 Spotlight | [Vgent: Graph-Based Retrieval-Reasoning-Augmented Generation for Long Video Understanding](https://arxiv.org/abs/2510.14032) | Clip graph retrieval plus structured evidence verification and aggregation | [Code](https://github.com/xiaoqian-shen/Vgent) |
-| ACM MM 2025 | [TV-RAG: A Temporal-Aware and Semantic Entropy-Weighted Framework for Long Video Retrieval and Understanding](https://doi.org/10.1145/3746027.3755873) | Temporal decay retrieval and entropy-weighted keyframe selection | [Code](https://github.com/AI-Researcher-Team/TV-RAG) |
-| arXiv 2025 | [Memory-Enhanced Retrieval Augmentation for Long Video Understanding (MemVid)](https://arxiv.org/abs/2503.09149) | Memory-guided retrieval clues with SFT and preference optimization | — |
+| CVPR 2025 | [DrVideo: Document Retrieval Based Long Video Understanding](https://openaccess.thecvf.com/content/CVPR2025/html/Ma_DrVideo_Document_Retrieval_Based_Long_Video_Understanding_CVPR_2025_paper.html) | Iteratively augments a textual video document with retrieved keyframes | [Code](https://github.com/Upper9527/DrVideo) |
+| CVPR 2025 | [SALOVA: Segment-Augmented Long Video Assistant for Targeted Retrieval and Routing](https://openaccess.thecvf.com/content/CVPR2025/html/Kim_SALOVA_Segment-Augmented_Long_Video_Assistant_for_Targeted_Retrieval_and_Routing_CVPR_2025_paper.html) | Segment Retrieval Router with spatio-temporal segment representations | [Code](https://github.com/IVY-LVLM/SALOVA) |
+| CVPR 2025 | [VideoTree: Adaptive Tree-based Video Representation for LLM Reasoning on Long Videos](https://openaccess.thecvf.com/content/CVPR2025/html/Wang_VideoTree_Adaptive_Tree-based_Video_Representation_for_LLM_Reasoning_on_Long_CVPR_2025_paper.html) | Query-adaptive, coarse-to-fine hierarchical video representation | [Code](https://github.com/Ziyang412/VideoTree) |
+| NeurIPS 2025 | [AdaVideoRAG: Omni-Contextual Adaptive Retrieval-Augmented Efficient Long Video Understanding](https://proceedings.neurips.cc/paper_files/paper/2025/hash/092359ce5cf60a80e882378944bf1be4-Abstract-Conference.html) | Routes queries among direct inference, multimodal retrieval, and graph retrieval | [Code](https://github.com/xzc-zju/AdaVideoRAG) |
+| NeurIPS 2025 Spotlight | [Vgent: Graph-based Retrieval-Reasoning-Augmented Generation For Long Video Understanding](https://proceedings.neurips.cc/paper_files/paper/2025/hash/91b75715a2ae8f2542b78be31941eac3-Abstract-Conference.html) | Clip graph retrieval plus structured evidence verification and aggregation | [Code](https://github.com/xiaoqian-shen/Vgent) |
+| ACM MM 2025 | [TV-RAG: A Temporal-aware and Semantic Entropy-Weighted Framework for Long Video Retrieval and Understanding](https://doi.org/10.1145/3746027.3755873) | Temporal decay retrieval and entropy-weighted keyframe selection | [Code](https://github.com/AI-Researcher-Team/TV-RAG) |
+| arXiv 2025 | [Memory-enhanced Retrieval Augmentation for Long Video Understanding (MemVid)](https://arxiv.org/abs/2503.09149) | Memory-guided retrieval clues with SFT and preference optimization | — |
 | arXiv 2025 | [FRAG: Frame Selection Augmented Generation for Long Video and Long Document Understanding](https://arxiv.org/abs/2504.17447) | Query-aware top-frame selection with a frozen VLM | [Code](https://github.com/NVlabs/FRAG) |
 | arXiv 2025 | [E-VRAG: Enhancing Long Video Understanding with Resource-Efficient Retrieval Augmented Generation](https://arxiv.org/abs/2508.01546) | Hierarchical pre-filtering, lightweight scoring, and multi-view answering | — |
 
@@ -238,12 +238,12 @@ A practical Video RAG pipeline contains ten principal modules grouped into three
 
 | Venue | Paper | Main Video-RAG contribution | Code |
 |---|---|---|---|
-| KDD 2026 | [VideoRAG: Retrieval-Augmented Generation with Extreme Long-Context Videos](https://arxiv.org/abs/2502.01549) | Graph-driven textual grounding plus hierarchical multimodal context encoding across videos | [Code](https://github.com/HKUDS/VideoRAG) |
+| KDD 2026 | [VideoRAG: Retrieval-Augmented Generation with Extreme Long-Context Videos](https://doi.org/10.1145/3770854.3783944) | Graph-driven textual grounding plus hierarchical multimodal context encoding across videos | [Code](https://github.com/HKUDS/VideoRAG) |
 | ICASSP 2026 | [SceneRAG: Scene-Level Retrieval-Augmented Generation for Video Understanding](https://arxiv.org/abs/2506.07600) | Narratively coherent scene units and scene-level multimodal graphs | — |
-| AAAI 2026 | [ViG-RAG: Video-Aware Graph Retrieval-Augmented Generation via Temporal and Semantic Hybrid Reasoning](https://doi.org/10.1609/aaai.v40i1.36963) | Probabilistic temporal knowledge graph with semantic-temporal hybrid retrieval | — |
+| AAAI 2026 | [ViG-RAG: Video-Aware Graph Retrieval-Augmented Generation via Temporal and Semantic Hybrid Reasoning](https://doi.org/10.1609/aaai.v40i1.36963) | Probabilistic temporal knowledge graph with semantic-temporal hybrid retrieval | [Code](https://github.com/AI-Researcher-Team/ViG-RAG) |
 | WACV 2026 | [RAVU: Retrieval Augmented Video Understanding with Compositional Reasoning over Graph](https://openaccess.thecvf.com/content/WACV2026/html/Malik_RAVU_Retrieval_Augmented_Video_Understanding_with_Compositional_Reasoning_over_Graph_WACV_2026_paper.html) | Spatio-temporal entity graph and compositional query decomposition | — |
 | CVPR 2026 | [StreamRAG: Enhancing Real-Time Video Understanding with Retrieval Augmentation](https://openaccess.thecvf.com/content/CVPR2026/html/Xie_StreamRAG_Enhancing_Real-Time_Video_Understanding_with_Retrieval_Augmentation_CVPR_2026_paper.html) | Online event segmentation, token reuse, and a query-aware dynamic retrieval gate | — |
-| CVPR 2026 Highlight | [WorldMM: Dynamic Multimodal Memory Agent for Long Video Reasoning](https://arxiv.org/abs/2512.02425) | Adaptive retrieval over episodic, semantic, and visual memories at multiple scales | [Code](https://github.com/wgcyeo/WorldMM) |
+| CVPR 2026 Highlight | [WorldMM: Dynamic Multimodal Memory Agent for Long Video Reasoning](https://openaccess.thecvf.com/content/CVPR2026/html/Yeo_WorldMM_Dynamic_Multimodal_Memory_Agent_for_Long_Video_Reasoning_CVPR_2026_paper.html) | Adaptive retrieval over episodic, semantic, and visual memories at multiple scales | [Code](https://github.com/wgcyeo/WorldMM) |
 | ACL 2026 | [VideoStir: Understanding Long Videos via Spatio-Temporally Structured and Intent-Aware RAG](https://aclanthology.org/2026.acl-long.1656/) | Clip-level spatio-temporal graph, multi-hop retrieval, and intent-aware frame scoring | [Code](https://github.com/RomGai/VideoStir) |
 | arXiv 2026 | [Rethinking RAG in Long Videos: What to Retrieve and How to Use It? (V-RAGBench & CARVE)](https://arxiv.org/abs/2606.13141) | Decoupled Video-RAG evaluation and chunk-adaptive modality/granularity reranking | — |
 
@@ -253,33 +253,22 @@ A practical Video RAG pipeline contains ten principal modules grouped into three
 
 ## Benchmarks and Datasets
 
-Video RAG evaluation spans answer generation, retrieval, temporal localization, long-context understanding, and agentic multi-hop evidence acquisition.
+The following resources cover retrieval, localization, long-video QA, and multi-hop evidence search.
 
 | Benchmark | Venue / year | Primary target | Paper | Data / code |
 |---|---:|---|---|---|
 | **NExT-QA** | CVPR 2021 | Causal and temporal Video QA | [Paper](https://openaccess.thecvf.com/content/CVPR2021/html/Xiao_NExT-QA_Next_Phase_of_Question-Answering_to_Explaining_Temporal_Actions_CVPR_2021_paper.html) | [Repository](https://github.com/doc-doc/NExT-QA) |
-| **QVHighlights** | NeurIPS 2021 Datasets & Benchmarks | Query-based moment retrieval and highlight detection | [Paper](https://arxiv.org/abs/2107.09609) | [Repository](https://github.com/jayleicn/moment_detr) |
-| **EgoSchema** | NeurIPS 2023 Datasets & Benchmarks | Very long-form egocentric Video QA | [Paper](https://arxiv.org/abs/2308.09126) | [Repository](https://github.com/egoschema/EgoSchema) |
-| **TVQA-Long** | ECCV 2024 | Episode-length video understanding | [Goldfish paper](https://arxiv.org/abs/2407.12679) | [Repository](https://github.com/Vision-CAIR/MiniGPT4-video) |
-| **LongVideoBench** | NeurIPS 2024 Datasets & Benchmarks | Interleaved video-language understanding up to one hour | [Paper](https://arxiv.org/abs/2407.15754) | [Repository](https://github.com/longvideobench/LongVideoBench) |
-| **Video-MME** | CVPR 2025 | Multi-domain, multi-duration, multimodal video understanding | [Paper](https://arxiv.org/abs/2405.21075) | [Repository](https://github.com/MME-Benchmarks/Video-MME) |
+| **QVHighlights** | NeurIPS 2021 Datasets & Benchmarks | Query-based moment retrieval and highlight detection | [Paper](https://proceedings.neurips.cc/paper_files/paper/2021/hash/62e0973455fd26eb03e91d5741a4a3bb-Abstract.html) | [Repository](https://github.com/jayleicn/moment_detr) |
+| **EgoSchema** | NeurIPS 2023 Datasets & Benchmarks | Very long-form egocentric Video QA | [Paper](https://proceedings.neurips.cc/paper_files/paper/2023/hash/90ce332aff156b910b002ce4e6880dec-Abstract-Datasets_and_Benchmarks.html) | [Repository](https://github.com/egoschema/EgoSchema) |
+| **TVQA-Long** | ECCV 2024 | Episode-length video understanding | [Goldfish paper](https://www.ecva.net/papers/eccv_2024/papers_ECCV/html/4213_ECCV_2024_paper.php) | [Repository](https://github.com/Vision-CAIR/MiniGPT4-video) |
+| **LongVideoBench** | NeurIPS 2024 Datasets & Benchmarks | Interleaved video-language understanding up to one hour | [Paper](https://proceedings.neurips.cc/paper_files/paper/2024/hash/329ad516cf7a6ac306f29882e9c77558-Abstract-Datasets_and_Benchmarks_Track.html) | [Repository](https://github.com/longvideobench/LongVideoBench) |
+| **Video-MME** | CVPR 2025 | Multi-domain, multi-duration, multimodal video understanding | [Paper](https://openaccess.thecvf.com/content/CVPR2025/html/Fu_Video-MME_The_First-Ever_Comprehensive_Evaluation_Benchmark_of_Multi-modal_LLMs_in_CVPR_2025_paper.html) | [Repository](https://github.com/MME-Benchmarks/Video-MME) |
 | **MLVU** | CVPR 2025 | Multi-task long-video understanding | [Paper](https://openaccess.thecvf.com/content/CVPR2025/html/Zhou_MLVU_Benchmarking_Multi-task_Long_Video_Understanding_CVPR_2025_paper.html) | [Repository](https://github.com/JUNJIE99/MLVU) |
-| **LVBench** | ICCV 2025 | Extreme long-video comprehension and information extraction | [Paper](https://arxiv.org/abs/2406.08035) | [Repository](https://github.com/zai-org/LVBench) |
-| **HiVU** | NeurIPS 2025 | Hierarchical and adaptive Video RAG | [AdaVideoRAG paper](https://proceedings.neurips.cc/paper_files/paper/2025/file/092359ce5cf60a80e882378944bf1be4-Paper-Conference.pdf) | [Repository; release pending](https://github.com/xzc-zju/AdaVideoRAG) |
-| **LongerVideos** | KDD 2026 | Extreme long-context and cross-video reasoning | [VideoRAG paper](https://arxiv.org/abs/2502.01549) | [Repository](https://github.com/HKUDS/VideoRAG) |
+| **LVBench** | ICCV 2025 | Extreme long-video comprehension and information extraction | [Paper](https://openaccess.thecvf.com/content/ICCV2025/html/Wang_LVBench_An_Extreme_Long_Video_Understanding_Benchmark_ICCV_2025_paper.html) | [Repository](https://github.com/zai-org/LVBench) |
+| **HiVU** | NeurIPS 2025 | Hierarchical and adaptive Video RAG | [AdaVideoRAG paper](https://proceedings.neurips.cc/paper_files/paper/2025/hash/092359ce5cf60a80e882378944bf1be4-Abstract-Conference.html) | [Repository](https://github.com/xzc-zju/AdaVideoRAG) |
+| **LongerVideos** | KDD 2026 | Extreme long-context and cross-video reasoning | [VideoRAG paper](https://doi.org/10.1145/3770854.3783944) | [Repository](https://github.com/HKUDS/VideoRAG) |
 | **V-RAGBench** | 2026 | Decoupled retrieval and generation with uniquely sufficient evidence chunks | [CARVE paper](https://arxiv.org/abs/2606.13141) | — |
 | **LongVidSearch** | 2026 | Agentic 2–4 hop evidence retrieval planning under a standardized interface | [Paper](https://arxiv.org/abs/2603.14468) | [Dataset](https://huggingface.co/datasets/Fishiing/LongVidSearch) |
-
-### Task Coverage
-
-| Evaluation task | Representative benchmarks |
-|---|---|
-| Video-to-text generation | MSVD, MSR-VTT, VATEX, ActivityNet Captions, YouCook2, BDD-X, WikiVideo |
-| Video question answering | MSVD-QA, MSRVTT-QA, TGIF-QA, ActivityNet-QA, TVQA, How2QA, NExT-QA, STAR, IntentQA, MVBench |
-| Text-video retrieval | MSR-VTT, MSVD, LSMDC, DiDeMo, YouCook2, EK100 MIR, Charades-Ego, EgoLearner |
-| Temporal grounding and localization | Charades-STA, QVHighlights, DiDeMo, ActivityNet Captions, Ego4D, TempCompass |
-| Long-video understanding | MovieQA, MovieChat-1K, TVQA-Long, EgoSchema, LongVideoBench, MLVU, LVBench, Video-MME |
-| Agentic retrieval and multi-hop reasoning | LongVidSearch, V-RAGBench |
 
 <p align="right"><a href="#quick-index">↑ Back to Index</a></p>
 
@@ -287,7 +276,7 @@ Video RAG evaluation spans answer generation, retrieval, temporal localization, 
 
 ## Evaluation
 
-Answer accuracy alone cannot diagnose a Video RAG pipeline. We recommend reporting retrieval, grounding, generation, and system-level metrics together.
+Answer accuracy alone does not show where a Video RAG pipeline succeeds or fails. Comparisons should report retrieval, grounding, generation, and system cost together.
 
 | Dimension | Metrics / protocols |
 |---|---|
@@ -299,13 +288,15 @@ Answer accuracy alone cannot diagnose a Video RAG pipeline. We recommend reporti
 | **Efficiency** | Offline indexing cost, retrieval latency, end-to-end wall-clock time, memory, TFLOPs, processed frames, and token count |
 | **Groundedness and factuality** | Evidence attribution, answer support, hallucination rate, factual consistency, and trustworthiness |
 
-For reproducible comparisons, please report the video sampling budget, retrieved evidence count, modality set, temporal granularity, generator, prompt/template, and whether subtitles or external knowledge are used.
+Reproducible comparisons should also state the video sampling budget, retrieved evidence count, modalities, temporal granularity, generator, prompt or template, and whether subtitles or external knowledge are used.
 
 <p align="right"><a href="#quick-index">↑ Back to Index</a></p>
 
 ---
 
 ## Applications
+
+Application areas discussed in the survey include:
 
 - **Education and knowledge learning**: lecture-series QA, curriculum search, and personalized review.
 - **Film and entertainment**: plot understanding, episode-level search, character/event tracking, and segment navigation.
@@ -333,7 +324,7 @@ For reproducible comparisons, please report the video sampling budget, retrieved
 
 ## Contributing and Citation
 
-This survey and reading list are a work in progress. Pull requests and issues are welcome for:
+Corrections and additions are welcome. Useful pull requests or issues include:
 
 - newly published Video RAG papers;
 - corrected venue, paper, project, dataset, or code links;
@@ -352,7 +343,7 @@ Taxonomy tags (granularity / knowledge structure / retrieval / fusion):
 One-sentence contribution:
 ```
 
-The survey's final BibTeX entry will be updated when the manuscript is publicly released. Until then, a minimal provisional record is:
+The final BibTeX entry will be added when the manuscript is public. Until then:
 
 ```bibtex
 @misc{videorag_survey_2026,
@@ -361,9 +352,5 @@ The survey's final BibTeX entry will be updated when the manuscript is publicly 
   note  = {Manuscript}
 }
 ```
-
-### Acknowledgement
-
-The organization of this repository was inspired by [Awesome MM-RAG](https://github.com/INTREBID/Awesome-MM-RAG). All taxonomy descriptions, figures, paper selections, and Video-RAG-specific scope follow our survey manuscript.
 
 <p align="right"><a href="#quick-index">↑ Back to Index</a></p>
