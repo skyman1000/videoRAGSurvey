@@ -184,8 +184,6 @@ The manuscript groups ten modules into three stages.
   <img src="imgC/Fig10_Workflow.png" width="98%" alt="Fig. 10. Workflow of Video RAG" />
 </p>
 
-<p align="center"><em>Fig. 10. Workflow of Video RAG, covering video knowledge indexing and representation, retrieval strategies and mechanisms, and retrieval augmentation and generation.</em></p>
-
 ### Indexing and Representation
 
 - **Corpus construction**: source collection, preprocessing, temporal synchronization, corpus organization, and incremental updates.
@@ -307,8 +305,6 @@ Answer accuracy alone does not show where a Video RAG pipeline succeeds or fails
 <p align="center">
   <img src="imgC/Fig9_Evaluation.png" width="98%" alt="Fig. 9. Evaluation systems and benchmarks for Video RAG" />
 </p>
-
-<p align="center"><em>Fig. 9. Evaluation systems and benchmarks for Video RAG.</em></p>
 
 Reproducible comparisons should also state the video sampling budget, retrieved evidence count, modalities, temporal granularity, generator, prompt or template, and whether subtitles or external knowledge are used.
 
