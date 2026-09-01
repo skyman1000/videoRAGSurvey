@@ -1,0 +1,13 @@
+# This repository publishes only the curated GitHub companion page and its figures.
+*
+!.gitignore
+!README.md
+!imgC/
+imgC/*
+!imgC/Evolution.png
+!imgC/videorag-framework.png
+!imgC/videorag_design_framework.png
+!imgC/multimodal-content-extraction-alignment.png
+!imgC/multi_granular_retrieval.png
+!imgC/retrieval_strategies.png
+!imgC/task-comparison.png
