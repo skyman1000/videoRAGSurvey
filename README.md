@@ -180,6 +180,12 @@ The manuscript groups ten modules into three stages.
 | **2. Retrieval strategies and mechanisms** | Query processing; retrieval granularity; retrieval mechanism; post-processing | Which evidence to retrieve, how many passes to use, and when to stop |
 | **3. Retrieval augmentation and generation** | Multimodal fusion; generator integration | How to format, fuse, verify, and pass evidence to the generator |
 
+<p align="center">
+  <img src="imgC/Fig10_Workflow.png" width="98%" alt="Fig. 10. Workflow of Video RAG" />
+</p>
+
+<p align="center"><em>Fig. 10. Workflow of Video RAG, covering video knowledge indexing and representation, retrieval strategies and mechanisms, and retrieval augmentation and generation.</em></p>
+
 ### Indexing and Representation
 
 - **Corpus construction**: source collection, preprocessing, temporal synchronization, corpus organization, and incremental updates.
@@ -297,6 +303,12 @@ Answer accuracy alone does not show where a Video RAG pipeline succeeds or fails
 | **Cross-video / long-range reasoning** | Multi-video retrieval, temporal grounding, multi-hop evidence coverage, citation/evidence F1 |
 | **Efficiency** | Offline indexing cost, retrieval latency, end-to-end wall-clock time, memory, TFLOPs, processed frames, and token count |
 | **Groundedness and factuality** | Evidence attribution, answer support, hallucination rate, factual consistency, and trustworthiness |
+
+<p align="center">
+  <img src="imgC/Fig9_Evaluation.png" width="98%" alt="Fig. 9. Evaluation systems and benchmarks for Video RAG" />
+</p>
+
+<p align="center"><em>Fig. 9. Evaluation systems and benchmarks for Video RAG.</em></p>
 
 Reproducible comparisons should also state the video sampling budget, retrieved evidence count, modalities, temporal granularity, generator, prompt or template, and whether subtitles or external knowledge are used.
 
