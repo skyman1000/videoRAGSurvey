@@ -163,7 +163,7 @@ The taxonomy has five design dimensions: evidence granularity, knowledge structu
 Retrieval-generation integration describes how retrieved video evidence is connected to the generator and optimized during inference. Existing Video RAG methods can be organized into two primary paradigms: training-enhanced integration and training-free integration.
 
 <p align="center">
-  <img src="images/Table12_Integration_Paradigms.png" width="98%" alt="Table 12. Integration Paradigms of Video RAG Systems" />
+  <img src="imgC/Table12_Integration_Paradigms.png" width="98%" alt="Table 12. Integration Paradigms of Video RAG Systems" />
 </p>
 
 <p align="right"><a href="#quick-index">↑ Back to Index</a></p>
