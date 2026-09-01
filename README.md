@@ -24,8 +24,7 @@ The survey studies Video RAG as a three-stage pipeline:
 - **Retrieval strategies and mechanisms**: query processing, multi-granular retrieval, single-step/multi-step/adaptive retrieval, and post-retrieval filtering.
 - **Retrieval augmentation and generation**: multimodal evidence fusion, generator integration, training strategies, and grounded response generation.
 
-> [!NOTE]
-> Venue labels use the final publication year. A dash (—) means no author-identified public implementation was found. Links last checked: 1 September 2026.
+
 
 ---
 
