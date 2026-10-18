@@ -188,7 +188,7 @@ The survey distinguishes **training-enhanced integration** (including supervised
 
 ---
 
-## Benchmarks and Datasets
+## Benchmarks
 
 The benchmarks below cover video question answering, temporal grounding, long-video reasoning, and retrieval-augmented evaluation. The **Original paper** column links to the work that introduced or released the benchmark.
 
