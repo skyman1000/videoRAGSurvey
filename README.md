@@ -153,7 +153,7 @@ After retrieval, evidence is aligned with the query, organized within the availa
 **Early fusion** combines evidence before the generator's main reasoning process; **mid fusion** integrates modalities through learned or intermediate representations; and **late fusion** consolidates outputs or evidence from multiple sources.
 
 <p align="center">
-  <a href="imgC/Table_Multimodal_Fusion.png"><img src="imgC/Table_Multimodal_Fusion.png" width="900" alt="Early, intermediate, and late multimodal evidence fusion" /></a>
+  <a href="imgC/Table_Multimodal_Fusion.png"><img src="imgC/Table_Multimodal_Fusion.png" width="2000" alt="Early, intermediate, and late multimodal evidence fusion" /></a>
 </p>
 
 
@@ -162,7 +162,7 @@ After retrieval, evidence is aligned with the query, organized within the availa
 Text-only LLMs can reason over textualized video records; LVLMs and MLLMs can incorporate retrieved visual evidence and additional modalities. Model selection affects context length, evidence format, computational cost, and grounding capabilities.
 
 <p align="center">
-  <a href="imgC/Table_Generator_Types_Systems.png"><img src="imgC/Table_Generator_Types_Systems.png" width="900" alt="Generator types and Video RAG systems" /></a>
+  <a href="imgC/Table_Generator_Types_Systems.png"><img src="imgC/Table_Generator_Types_Systems.png" width="2000" alt="Generator types and Video RAG systems" /></a>
 </p>
 
 
@@ -171,7 +171,7 @@ Text-only LLMs can reason over textualized video records; LVLMs and MLLMs can in
 
 
 <p align="center">
-  <a href="imgC/Table_Generator_Models.png"><img src="imgC/Table_Generator_Models.png" width="900" alt="Representative generative models" /></a>
+  <a href="imgC/Table_Generator_Models.png"><img src="imgC/Table_Generator_Models.png" width="2000" alt="Representative generative models" /></a>
 </p>
 
 
