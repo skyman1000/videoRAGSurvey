@@ -166,16 +166,6 @@ Text-only LLMs can reason over textualized video records; LVLMs and MLLMs can in
 </p>
 
 
-<details>
-<summary><strong>Representative generative models</strong></summary>
-
-
-<p align="center">
-  <a href="imgC/Table_Generator_Models.png"><img src="imgC/Table_Generator_Models.png" width="2000" alt="Representative generative models" /></a>
-</p>
-
-
-</details>
 
 ### Integration Paradigms of Video RAG Systems
 
