@@ -188,34 +188,79 @@ The survey distinguishes **training-enhanced integration** (including supervised
 
 ---
 
-## Benchmarks
+## Benchmarks and Datasets
 
-The benchmarks below cover video question answering, temporal grounding, long-video reasoning, and retrieval-augmented evaluation. The **Original paper** column links to the work that introduced or released the benchmark.
+The following table collects the benchmarks listed in Table 13 of the survey. The **Original paper** column links to the work that introduced or released each benchmark.
 
-| Benchmark          | Focus                                                  | Original paper                                               | Benchmark / data                                             |
-| ------------------ | ------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| **NExT-QA**        | Causal and temporal video QA                           | [Paper](https://openaccess.thecvf.com/content/CVPR2021/html/Xiao_NExT-QA_Next_Phase_of_Question-Answering_to_Explaining_Temporal_Actions_CVPR_2021_paper.html) | [Dataset](https://github.com/doc-doc/NExT-QA)                |
-| **QVHighlights**   | Query-focused moment retrieval and highlight detection | [Paper](https://arxiv.org/abs/2107.09609)                    | [Dataset / code](https://github.com/jayleicn/moment_detr)    |
-| **EgoSchema**      | Very long-form egocentric video QA                     | [Paper](https://proceedings.neurips.cc/paper_files/paper/2023/hash/90ce332aff156b910b002ce4e6880dec-Abstract-Datasets_and_Benchmarks.html) | [Dataset](https://github.com/egoschema/EgoSchema)            |
-| **TVQA-Long**      | Episode-length TV video QA                             | [Paper](https://arxiv.org/abs/2407.12679)                    | [Project / benchmark](https://vision-cair.github.io/Goldfish_website/) |
-| **LongVideoBench** | Long-context interleaved video-language reasoning      | [Paper](https://arxiv.org/abs/2407.15754)                    | [Dataset / code](https://github.com/longvideobench/LongVideoBench) |
-| **Video-MME**      | Multimodal video understanding across durations        | [Paper](https://openaccess.thecvf.com/content/CVPR2025/html/Fu_Video-MME_The_First-Ever_Comprehensive_Evaluation_Benchmark_of_Multi-modal_LLMs_in_CVPR_2025_paper.html) | [Dataset / code](https://github.com/MME-Benchmarks/Video-MME) |
-| **MLVU**           | Multi-task long-video understanding                    | [Paper](https://openaccess.thecvf.com/content/CVPR2025/html/Zhou_MLVU_Benchmarking_Multi-task_Long_Video_Understanding_CVPR_2025_paper.html) | [Dataset / code](https://github.com/JUNJIE99/MLVU)           |
-| **LVBench**        | Extreme long-video understanding                       | [Paper](https://openaccess.thecvf.com/content/ICCV2025/html/Wang_LVBench_An_Extreme_Long_Video_Understanding_Benchmark_ICCV_2025_paper.html) | [Dataset / code](https://github.com/zai-org/LVBench)         |
-| **HiVU**           | Hierarchical video understanding                       | [Paper](https://proceedings.neurips.cc/paper_files/paper/2025/hash/092359ce5cf60a80e882378944bf1be4-Abstract-Conference.html) | [Project](https://github.com/xzc-zju/AdaVideoRAG)            |
-| **LongerVideos**   | Cross-video and extremely long-context QA              | [Paper](https://arxiv.org/abs/2502.01549)                    | [Dataset / code](https://github.com/HKUDS/VideoRAG)          |
-| **V-RAGBench**     | Decoupled evidence retrieval and answer generation     | [Paper](https://arxiv.org/abs/2606.13141)                    | [Dataset](https://huggingface.co/datasets/DISLab/VRAG-Bench) |
-| **LongVidSearch**  | Multi-hop evidence retrieval planning                  | [Paper](https://arxiv.org/abs/2603.14468)                    | [Dataset](https://huggingface.co/datasets/Fishiing/LongVidSearch) |
+| Benchmark | Focus | Original paper | Benchmark / data |
+| --- | --- | --- | --- |
+| **MSVD** | Video captioning and video-text retrieval | [Paper](https://www.cs.utexas.edu/~ml/papers/captioning-acl11.pdf) | - |
+| **MSR-VTT** | Video captioning and video-text retrieval | [Paper](https://arxiv.org/abs/1502.08029) | [Dataset / code](https://github.com/ArrowLuo/VideoCaptioning) |
+| **VATEX** | Multilingual video captioning and retrieval | [Paper](https://arxiv.org/abs/1904.03400) | [Dataset](https://ericguo5513.github.io/vatex-website/) |
+| **ActivityNet Captions** | Dense video captioning | [Paper](https://arxiv.org/abs/1705.00754) | [Dataset](https://cs.stanford.edu/people/ranjaykrishna/densevid/) |
+| **YouCook2** | Instructional video captioning and retrieval | [Paper](https://arxiv.org/abs/1804.02348) | [Dataset](http://youcook2.eecs.umich.edu/) |
+| **BDD-X** | Driving video explanations and captioning | [Paper](https://arxiv.org/abs/1806.09866) | [Dataset](https://github.com/xdshang/BDD-x-dataset) |
+| **Spoken-SAX** | Spoken video description and retrieval | [Paper](https://scholar.google.com/scholar?q=Spoken-SAX) | - |
+| **News Video Dataset** | News video captioning and retrieval | [Paper](https://arxiv.org/abs/1804.01735) | - |
+| **WikiVideo** | Multi-video article generation | [Paper](https://scholar.google.com/scholar?q=WikiVideo+Article+generation+from+multiple+videos) | - |
+| **MSVD-QA** | Open-ended video question answering | [Paper](https://arxiv.org/abs/1511.05938) | - |
+| **MSRVTT-QA** | Open-ended video question answering | [Paper](https://arxiv.org/abs/1511.05938) | - |
+| **TGIF-QA** | Video question answering over animated GIFs | [Paper](https://arxiv.org/abs/1704.04497) | [Dataset](https://github.com/YunseokJANG/tgif-qa) |
+| **ActivityNet-QA** | Video question answering | [Paper](https://arxiv.org/abs/1906.02467) | [Dataset](https://github.com/MILVLG/activitynet-qa) |
+| **TVQA** | Compositional question answering over TV episodes | [Paper](https://arxiv.org/abs/1809.01696) | [Dataset](https://tvqa.cs.unc.edu/) |
+| **How2QA** | Instructional video question answering | [Paper](https://arxiv.org/abs/2006.15508) | - |
+| **NExT-QA** | Causal and temporal video QA | [Paper](https://openaccess.thecvf.com/content/CVPR2021/html/Xiao_NExT-QA_Next_Phase_of_Question-Answering_to_Explaining_Temporal_Actions_CVPR_2021_paper.html) | [Dataset](https://github.com/doc-doc/NExT-QA) |
+| **STAR** | Situated reasoning in real-world videos | [Paper](https://arxiv.org/abs/2210.13939) | - |
+| **IntentQA** | Intent-oriented video question answering | [Paper](https://arxiv.org/abs/2207.04816) | - |
+| **iVQA** | Open-ended video question answering | [Paper](https://arxiv.org/abs/2105.06994) | - |
+| **MVBench** | Multi-task multimodal video understanding | [Paper](https://arxiv.org/abs/2311.17005) | [Dataset / code](https://github.com/OpenGVLab/Ask-Anything) |
+| **EgoMCQ** | Egocentric video multiple-choice QA | [Paper](https://arxiv.org/abs/2205.12687) | - |
+| **CFVBench** | Fine-grained video retrieval-augmented generation | [Paper](https://scholar.google.com/scholar?q=CFVBench) | - |
+| **Video SimpleQA** | Factual video question answering | [Paper](https://scholar.google.com/scholar?q=Video+SimpleQA) | - |
+| **ForeSeaQA** | Forensic video question answering | [Paper](https://scholar.google.com/scholar?q=ForeSeaQA) | - |
+| **LSMDC** | Movie description retrieval | [Paper](https://arxiv.org/abs/1506.06981) | [Dataset](https://www.cc.gatech.edu/~dbatra/lsmdc/) |
+| **DiDeMo** | Moment localization and text-video retrieval | [Paper](https://arxiv.org/abs/1708.01641) | [Dataset / code](https://github.com/LisaAnne/LocalizingMoments) |
+| **EK100 MIR** | Egocentric video-text retrieval | [Paper](https://arxiv.org/abs/2207.01399) | [Dataset](https://epic-kitchens.github.io/2023) |
+| **Charades-Ego** | Egocentric video understanding and retrieval | [Paper](https://arxiv.org/abs/1804.09626) | - |
+| **EgoLearner** | Egocentric video retrieval | [Paper](https://scholar.google.com/scholar?q=EgoLearner+video+retrieval) | - |
+| **Charades-STA** | Temporal sentence grounding | [Paper](https://arxiv.org/abs/1705.02101) | [Code](https://github.com/jiyanggao/TALL) |
+| **QVHighlights** | Query-focused moment retrieval and highlight detection | [Paper](https://arxiv.org/abs/2107.09609) | [Dataset / code](https://github.com/jayleicn/moment_detr) |
+| **Ego4D** | Egocentric video understanding and temporal grounding | [Paper](https://arxiv.org/abs/2110.04963) | [Dataset](https://ego4d-data.org/) |
+| **MovieQA** | Movie story question answering | [Paper](https://arxiv.org/abs/1511.02912) | [Dataset](http://movieqa.cs.toronto.edu/) |
+| **MovieChat-1K** | Long movie question answering | [Paper](https://arxiv.org/abs/2307.16449) | [Code](https://github.com/rese1f/MovieChat) |
+| **TVQA-Long** | Episode-length TV video QA | [Paper](https://arxiv.org/abs/2407.12679) | [Project](https://vision-cair.github.io/Goldfish_website/) |
+| **EgoSchema** | Very long-form egocentric video QA | [Paper](https://proceedings.neurips.cc/paper_files/paper/2023/hash/90ce332aff156b910b002ce4e6880dec-Abstract-Datasets_and_Benchmarks.html) | [Dataset](https://github.com/egoschema/EgoSchema) |
+| **LVU** | Long video understanding | [Paper](https://arxiv.org/abs/2110.06186) | - |
+| **LongVideoBench** | Long-context interleaved video-language reasoning | [Paper](https://arxiv.org/abs/2407.15754) | [Dataset / code](https://github.com/longvideobench/LongVideoBench) |
+| **MLVU** | Multi-task long-video understanding | [Paper](https://openaccess.thecvf.com/content/CVPR2025/html/Zhou_MLVU_Benchmarking_Multi-task_Long_Video_Understanding_CVPR_2025_paper.html) | [Dataset / code](https://github.com/JUNJIE99/MLVU) |
+| **LVBench** | Extreme long-video understanding | [Paper](https://openaccess.thecvf.com/content/ICCV2025/html/Wang_LVBench_An_Extreme_Long_Video_Understanding_Benchmark_ICCV_2025_paper.html) | [Dataset / code](https://github.com/zai-org/LVBench) |
+| **VNBench** | Needle-in-a-haystack long-video understanding | [Paper](https://scholar.google.com/scholar?q=VNBench+long+video) | - |
+| **Video-MME** | Multimodal video understanding across durations | [Paper](https://openaccess.thecvf.com/content/CVPR2025/html/Fu_Video-MME_The_First-Ever_Comprehensive_Evaluation_Benchmark_of_Multi-modal_LLMs_in_CVPR_2025_paper.html) | [Dataset / code](https://github.com/MME-Benchmarks/Video-MME) |
+| **Video-MMMU** | Multimodal video reasoning | [Paper](https://scholar.google.com/scholar?q=Video-MMMU) | - |
+| **MMBench-Video** | Long-form multi-shot video understanding | [Paper](https://arxiv.org/abs/2406.14559) | - |
+| **MMR-V** | Multimodal deep reasoning in videos | [Paper](https://arxiv.org/abs/2502.10397) | - |
+| **Video-Holmes** | Long-video reasoning and knowledge understanding | [Paper](https://scholar.google.com/scholar?q=Video-Holmes) | - |
+| **VSI-Bench** | Visual-spatial reasoning in videos | [Paper](https://arxiv.org/abs/2410.11619) | - |
+| **HiVU** | Hierarchical video understanding | [Paper](https://proceedings.neurips.cc/paper_files/paper/2025/hash/092359ce5cf60a80e882378944bf1be4-Abstract-Conference.html) | [Project](https://github.com/xzc-zju/AdaVideoRAG) |
+| **LongerVideos** | Cross-video and extremely long-context QA | [Paper](https://arxiv.org/abs/2502.01549) | [Dataset / code](https://github.com/HKUDS/VideoRAG) |
+| **EgoLifeQA** | Lifelong egocentric video QA | [Paper](https://scholar.google.com/scholar?q=EgoLifeQA) | - |
+| **Ego-R1** | Long-horizon egocentric video reasoning | [Paper](https://scholar.google.com/scholar?q=Ego-R1+video) | - |
+| **HippoVlog** | Long-form egocentric vlog understanding | [Paper](https://scholar.google.com/scholar?q=HippoVlog) | - |
+| **CinePile** | Long-video question answering | [Paper](https://arxiv.org/abs/2405.08813) | - |
+| **ScaleLong** | Multi-timescale long-video understanding | [Paper](https://scholar.google.com/scholar?q=ScaleLong+video) | - |
+| **Event-Bench** | Event-centric video understanding | [Paper](https://scholar.google.com/scholar?q=Event-Bench+video+understanding) | - |
+| **CG-Bench** | Clue-grounded long-video QA | [Paper](https://arxiv.org/abs/2505.17673) | - |
+| **EC-Bench** | Long-video event comprehension | [Paper](https://scholar.google.com/scholar?q=EC-Bench+video) | - |
+| **MM-Lifelong** | Lifelong multimodal video understanding | [Paper](https://scholar.google.com/scholar?q=MM-Lifelong+video) | - |
+| **TempCompass** | Temporal video understanding | [Paper](https://arxiv.org/abs/2403.00476) | [Dataset / code](https://github.com/llyx97/TempCompass) |
+| **VRBench** | Multi-step reasoning in long narrative videos | [Paper](https://arxiv.org/abs/2505.10572) | - |
+| **LongVidSearch** | Multi-hop evidence retrieval planning | [Paper](https://arxiv.org/abs/2603.14468) | [Dataset](https://huggingface.co/datasets/Fishiing/LongVidSearch) |
+| **OVO-Bench** | Streaming video understanding | [Paper](https://arxiv.org/abs/2505.09711) | - |
+| **StreamingBench** | Real-time streaming video understanding | [Paper](https://scholar.google.com/scholar?q=StreamingBench+video+understanding) | - |
+| **V-RAGBench** | Decoupled evidence retrieval and answer generation | [Paper](https://arxiv.org/abs/2606.13141) | [Dataset](https://huggingface.co/datasets/DISLab/VRAG-Bench) |
 
-<details>
-<summary><strong>Benchmark taxonomy in the survey</strong></summary>
+`VRBench` and `V-RAGBench` are distinct benchmarks and should not be merged.
 
-
-![Video RAG benchmarks organized by task](imgC/Table_Video_Benchmarks.png)
-
-</details>
-
----
 
 ## Evaluation
 
