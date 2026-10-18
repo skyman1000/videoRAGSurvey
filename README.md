@@ -257,9 +257,7 @@ The following table collects the benchmarks listed in Table 13 of the survey. Th
 | **LongVidSearch** | Multi-hop evidence retrieval planning | [Paper](https://arxiv.org/abs/2603.14468) | [Dataset](https://huggingface.co/datasets/Fishiing/LongVidSearch) |
 | **OVO-Bench** | Streaming video understanding | [Paper](https://arxiv.org/abs/2505.09711) | - |
 | **StreamingBench** | Real-time streaming video understanding | [Paper](https://scholar.google.com/scholar?q=StreamingBench+video+understanding) | - |
-| **V-RAGBench** | Decoupled evidence retrieval and answer generation | [Paper](https://arxiv.org/abs/2606.13141) | [Dataset](https://huggingface.co/datasets/DISLab/VRAG-Bench) |
 
-`VRBench` and `V-RAGBench` are distinct benchmarks and should not be merged.
 
 
 ## Evaluation
