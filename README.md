@@ -244,7 +244,7 @@ The survey distinguishes **training-enhanced integration** (including supervised
 | **VRBench**              | Multi-step reasoning in long narrative videos                | [Paper](https://openaccess.thecvf.com/content/ICCV2025/html/Yu_VRBench_A_Benchmark_for_Multi-Step_Reasoning_in_Long_Narrative_Videos_ICCV_2025_paper.html) | [Dataset / code](https://github.com/OpenGVLab/VRBench)       |
 | **LongVidSearch**        | Multi-hop evidence retrieval planning                        | [Paper](https://arxiv.org/abs/2603.14468)                    | [Dataset](https://huggingface.co/datasets/Fishiing/LongVidSearch) |
 | **OVO-Bench**            | Streaming video understanding                                | [Paper](https://openaccess.thecvf.com/content/CVPR2025/html/Niu_OVO-Bench_How_Far_is_Your_Video-LLMs_from_Real-World_Online_Video_CVPR_2025_paper.html) | [Dataset / code](https://github.com/JoeLeelyf/OVO-Bench)     |
-| **StreamingBench**       | Real-time streaming video understanding                      | [Paper](https://arxiv.org/abs/2411.03628)                    | [Dataset / code](https://github.com/THUNLP-MT/StreamingBench) | - |
+| **StreamingBench**       | Real-time streaming video understanding                      | [Paper](https://ieeexplore.ieee.org/document/11463959)                    | [Dataset / code](https://github.com/THUNLP-MT/StreamingBench) | - |
 
 
 
