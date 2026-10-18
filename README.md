@@ -109,7 +109,7 @@ Video knowledge organization determines **what can be retrieved**. It includes c
 
 ### Multimodal Content Extraction
 
-Visual frames and scene descriptions, **audio events and ASR**, **OCR and subtitles**, and temporal metadata are extracted and aligned into retrievable evidence units. Frame sampling may be uniform, keyframe-based, or adaptive.
+Visual frames and scene descriptions, audio events and ASR, OCR and subtitles, and temporal metadata are extracted and aligned into retrievable evidence units. Frame sampling may be uniform, keyframe-based, or adaptive.
 
 <p align="center">
   <a href="imgC/multimodal-content-extraction-alignment.png"><img src="imgC/multimodal-content-extraction-alignment.png" width="96%" alt="Multimodal evidence extraction and temporal alignment" /></a>
