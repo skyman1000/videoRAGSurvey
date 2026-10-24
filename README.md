@@ -368,15 +368,22 @@ The survey discusses Video RAG in several domains:
 - **Content Media Creation and Production** 
 - **Enterprise Training and Knowledge Management**
 - **Scientific Research**
-## Challenges and Future Directions
+  
+## Current Major Challenges
 
-1. **Hierarchical and long-term memory:** maintain entities, events, temporal dependencies, and source provenance across lengthy videos.
-2. **Fine-grained, multimodal retrieval:** locate sparse or distributed evidence without discarding the context required for reasoning.
-3. **Adaptive and agentic acquisition:** select modalities, granularities, tools, and retrieval stopping conditions dynamically.
-4. **Efficient and deployable systems:** reduce indexing, storage, retrieval, and inference costs for streaming and real-time settings.
-5. **Evidence-grounded generation:** improve cross-modal alignment, factual consistency, and traceable citation of retrieved moments.
-6. **Unified evaluation:** jointly assess retrieval, localization, reasoning, answer quality, robustness, and computational cost.
+- **Limited Structured Long-Term Memory**
+- **Fine-Grained Retrieval** 
+- **Efficiency and Latency Bottlenecks**
+- **Limited Evaluation Frameworks**
+- **Heavy Dependence on Interdependent Modules** 
 
+## Current Major Challenges
+
+- **Hierarchical and Long-Term Memory**
+- **Adaptive and Agentic Retrieval** 
+- **Efficient and Deployable Systems**
+- **Unified Benchmark Construction**
+- **Cross-Module Coordination** 
 ---
 
 ## Contributing and Citation
