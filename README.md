@@ -262,9 +262,9 @@ Answer accuracy alone does not identify whether a Video RAG system has retrieved
 | **Temporal grounding**    | tIoU, mIoU, IoU-thresholded Recall@K, MTGS                   |
 | **Citation attribution**  | CiteP, CiteR, CiteF1; support of generated claims by cited video evidence |
 | **Answer generation**     | Accuracy, Exact Match, F1, ANLS, BLEU, METEOR, ROUGE, CIDEr, BERTScore, STEM, InfoP, InfoR, InfoF1, LLM-as-a-judge |
-| **Long-video robustness** | Length-stratified accuracy, performance over increasing video duration |
-| **Cross-video reasoning** | Long-range and multi-video reasoning scores; evidence coverage across events and sources |
-| **System efficiency**     | Retrieval and end-to-end latency, wall-clock time, memory, TFLOPs, processed frames and tokens |
+| **Long-video robustness** | Accuracy, M-Avg, G-Avg, Overall score |
+| **Cross-video reasoning** | O.Avg, C.Avg, T.Avg, M.Avg |
+| **System efficiency**     | RLatency, Wall Speedup, Memory, Retained, TFLOPs, #Frames, #Tokens |
 
 For reproducibility, report the **video duration**, **frame-sampling budget**, **retrieved evidence count and granularity**, **used modalities**, **indexing cost**, **generator**, and **inference settings** alongside answer metrics.
 
