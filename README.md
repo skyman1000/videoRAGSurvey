@@ -364,8 +364,8 @@ The survey discusses Video RAG in several domains:
 - **Film and entertainment:** story understanding, event and character retrieval, and episode navigation.
 - **Surveillance and public safety:** long-duration event search, anomaly investigation, and forensic review.
 - **Embodied AI and robotics:** episodic memory, action and navigation history, and task planning.
-- **Healthcare:** surgical video retrieval, monitoring, and case-grounded assistance.
-- **Content creation:** source localization, news/video production, and retrieval-guided editing.
+- **Healthcare support:** surgical video retrieval, monitoring, and case-grounded assistance.
+- **Content Media Creation and Production:** source localization, news/video production, and retrieval-guided editing.
 - **Enterprise and scientific workflows:** procedural knowledge retrieval, experimental videos, and searchable multimodal records.
 
 ## Challenges and Future Directions
