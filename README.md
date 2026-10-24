@@ -360,14 +360,14 @@ Video RAG and retrieval-based video methods are listed chronologically. **†** 
 
 The survey discusses Video RAG in several domains:
 
-- **Education and knowledge learning:** lecture search, instructional QA, and personalized review.
-- **Film and entertainment:** story understanding, event and character retrieval, and episode navigation.
-- **Surveillance and public safety:** long-duration event search, anomaly investigation, and forensic review.
-- **Embodied AI and robotics:** episodic memory, action and navigation history, and task planning.
-- **Healthcare support:** surgical video retrieval, monitoring, and case-grounded assistance.
-- **Content Media Creation and Production:** source localization, news/video production, and retrieval-guided editing.
-- **Enterprise and scientific workflows:** procedural knowledge retrieval, experimental videos, and searchable multimodal records.
-
+- **Education and Knowledge Learning**
+- **Film and Entertainment** 
+- **Surveillance and Public Safety** 
+- **Embodied AI and Robotics** 
+- **Healthcare Support** 
+- **Content Media Creation and Production** 
+- **Enterprise Training and Knowledge Management**
+- **Scientific Research**
 ## Challenges and Future Directions
 
 1. **Hierarchical and long-term memory:** maintain entities, events, temporal dependencies, and source provenance across lengthy videos.
